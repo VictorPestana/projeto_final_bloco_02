@@ -1,10 +1,8 @@
 import { forwardRef } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 import { Module } from '@nestjs/common';
-import { UsuarioModule } from 'src/usuario/usuario.module';
-
+import { UsuarioModule } from '../usuario/usuario.module';
 import { jwtConstants } from './constants/constant';
-
 import { AuthService } from '../auth/services/auth.service';
 import { Bcrypt } from './bcrypt/bcrypt';
 import { AuthController } from './controllers/auth.controller';

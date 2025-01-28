@@ -1,6 +1,6 @@
 import { IsNotEmpty, IsNumber, IsPositive } from 'class-validator';
-import { Categoria } from 'src/categoria/entities/categoria.entity';
-import { NumericTransformer } from 'src/util/numerictransformer';
+import { Categoria } from '../../categoria/entities/categoria.entity';
+import { NumericTransformer } from '../../util/numerictransformer';
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
 
 @Entity()

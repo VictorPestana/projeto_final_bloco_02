@@ -13,7 +13,6 @@ import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Categoria, Produto, Usuario]),
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
@@ -24,6 +23,7 @@ import { AuthModule } from './auth/auth.module';
       autoLoadEntities: true,
       synchronize: true,
     }),
+    TypeOrmModule.forFeature([Categoria, Produto, Usuario]),
     CategoriaModule,
     UsuarioModule,
     AuthModule,
