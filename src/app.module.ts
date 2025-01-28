@@ -9,6 +9,7 @@ import { UsuarioModule } from './usuario/usuario.module';
 import { Usuario } from './usuario/entities/usuario.entity';
 import { UsuarioService } from './usuario/services/usuario.service';
 import { UsuarioController } from './usuario/controllers/usuario.controller';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { UsuarioController } from './usuario/controllers/usuario.controller';
     }),
     CategoriaModule,
     UsuarioModule,
+    AuthModule,
   ],
   controllers: [ProdutoController, UsuarioController],
   providers: [ProdutoService, UsuarioService],
