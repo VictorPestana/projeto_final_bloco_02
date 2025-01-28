@@ -10,6 +10,8 @@ import { Usuario } from './usuario/entities/usuario.entity';
 import { UsuarioService } from './usuario/services/usuario.service';
 import { UsuarioController } from './usuario/controllers/usuario.controller';
 import { AuthModule } from './auth/auth.module';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 
 @Module({
   imports: [
@@ -23,13 +25,11 @@ import { AuthModule } from './auth/auth.module';
       autoLoadEntities: true,
       synchronize: true,
     }),
-    TypeOrmModule.forFeature([Categoria, Produto, Usuario]),
-    CategoriaModule,
+    TypeOrmModule.forFeature([Categoria, Produto, Usuario]), 
     UsuarioModule,
     AuthModule,
   ],
-  controllers: [ProdutoController, UsuarioController],
-  providers: [ProdutoService, UsuarioService],
+  controllers: [AppController, ProdutoController, UsuarioController],
+  providers: [AppService, ProdutoService, UsuarioService],
 })
 export class AppModule {}
-
