@@ -5,10 +5,14 @@ import { CategoriaModule } from './categoria/categoria.module';
 import { Categoria } from './categoria/entities/categoria.entity';
 import { ProdutoService } from './produto/services/produto.services';
 import { ProdutoController } from './produto/controllers/produto.controller';
-
+import { UsuarioModule } from './usuario/usuario.module';
+import { Usuario } from './usuario/entities/usuario.entity';
+import { UsuarioService } from './usuario/services/usuario.service';
+import { UsuarioController } from './usuario/controllers/usuario.controller';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Categoria, Produto]),
+  imports: [
+    TypeOrmModule.forFeature([Categoria, Produto, Usuario]),
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
@@ -20,9 +24,10 @@ import { ProdutoController } from './produto/controllers/produto.controller';
       synchronize: true,
     }),
     CategoriaModule,
+    UsuarioModule,
   ],
-  controllers: [ProdutoController],
-  providers: [ProdutoService],
+  controllers: [ProdutoController, UsuarioController],
+  providers: [ProdutoService, UsuarioService],
 })
 export class AppModule {}
 
